@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Customs — Live App Check</title>
+  <style>
+    :root { color: #10243a; background: #f6f4ef; font-family: Arial, sans-serif; }
+    body { max-width: 1050px; margin: 0 auto; padding: 42px 24px 64px; line-height: 1.55; }
+    header { border-bottom: 5px solid #e25286; margin-bottom: 36px; padding-bottom: 20px; }
+    h1 { color: #123b66; font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: .95; margin: 0 0 12px; }
+    h2 { color: #6b2947; margin-top: 42px; }
+    .eyebrow { color: #e25286; font: 700 .75rem/1.2 monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .intro, figure { background: #fff; border: 1px solid #d9d9d4; padding: 18px; }
+    figure { margin: 18px 0 34px; box-shadow: 0 8px 22px #123b6614; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid #d9d9d4; }
+    figcaption { color: #405466; margin-top: 14px; }
+    .check { color: #6b2947; font-weight: 700; }
+    footer { border-top: 1px solid #c9d0d0; color: #62727d; font-size: .9rem; margin-top: 48px; padding-top: 16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Campus Customs / HW 4 / Live verification</p>
+    <h1>App check</h1>
+    <p>These screenshots document three working storefront behaviors tested against the running React frontend and FastAPI backend.</p>
+  </header>
+  <section>
+    <h2>1. Chat checks live inventory and price</h2>
+    <p>The shopper asks about a specific product and size from its detail page. The chat response reports the database-backed quantity and price, and includes a linked product card.</p>
+    <figure><img src="app_check_images/inventory-chat.png" alt="Campus Customs product detail page with chat showing five size M hoodies and a price of 68 dollars"><figcaption><span class="check">What this proves:</span> the agent answered “We have 5 Basic Hoodie Big Yale hoodies in size M. The price is $68.00.” The detail page also displays the same catalogue price and size inventory.</figcaption></figure>
+  </section>
+  <section>
+    <h2>2. Category question creates dynamic product cards</h2>
+    <p>After the shopper asks, “What hoodies do you have?”, the agent returns structured product matches. The page adds a “Found for you” results area with images, names, prices, and cards that lead to product detail pages.</p>
+    <figure><img src="app_check_images/dynamic-search.png" alt="Campus Customs home page with chat response and six hoodie product cards in a Found for you section"><figcaption><span class="check">What this proves:</span> a category-style chat question produced six matching hoodie cards on the page, while the chat also shows compact linked matches.</figcaption></figure>
+  </section>
+  <section>
+    <h2>3. Problem 9 usability feature: catalogue filter and sort</h2>
+    <p>The products page lets shoppers narrow the catalogue by text and garment type, then choose a price sort. This reduces browsing effort and makes the collection easier to shop.</p>
+    <figure><img src="app_check_images/filter-sort.png" alt="Campus Customs products page filtered to hoodie, pullover hoodie, and sorted by price low to high"><figcaption><span class="check">What this proves:</span> the products toolbar is actively filtering for “hoodie,” selecting “pullover hoodie,” and sorting “Price: low to high”; the visible cards update to the matching catalogue items.</figcaption></figure>
+  </section>
+  <footer>Tested locally with the Vite frontend and FastAPI service on October 7, 2026.</footer>
+</body>
+</html>
